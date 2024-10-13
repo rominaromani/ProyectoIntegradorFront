@@ -11,8 +11,8 @@ const Nosotros = () => {
         </div>
         
         <div className="marca-section__images">
-            <img src="/img/nosotros-img2.webp" alt="Hoja" className="marca-section__image marca-section__image--left" />
-            <img src="/img/nosotros-img1.webp" alt="Persona" className="marca-section__image marca-section__image--right" />
+            <img src="/img/nosotros-img2.webp" alt="Imagen de una hoja" className="marca-section__image marca-section__image--left" />
+            <img src="/img/nosotros-img1.webp" alt="Imagen de dueña de la compañia" className="marca-section__image marca-section__image--right" />
         </div>
         
         <p className="marca-section__description">

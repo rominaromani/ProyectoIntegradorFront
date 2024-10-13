@@ -9,7 +9,7 @@ const CarritoContext = createContext()
 const CarritoProvider = ( { children } ) => {
 
     const url = import.meta.env.VITE_BACKEND_CARRITOS
-    const [ agregarAlCarrito, eliminarDelCarrito, limpiarCarrito, carrito ] = useLocalStorage('carrito', [])
+    const [ agregarAlCarrito, eliminarDelCarrito, limpiarCarrito, carrito , actualizarCarrito] = useLocalStorage('carrito', [])
 
 
     function elProductoEstaEnElCarrito(producto) { 
@@ -35,14 +35,9 @@ const CarritoProvider = ( { children } ) => {
     }
 
     const ModificarCantidadDeProducto = (productoId, cantidad) => {
-        const productoDeCarrito = carrito.find(prod => prod.id === productoId);
-
-        if (productoDeCarrito) {
-            productoDeCarrito.cantidad = cantidad;
-            window.localStorage.setItem('carrito', JSON.stringify(carrito));
-        } else {
-            console.error(`Producto con id ${productoId} no encontrado en el carrito`);
-        }
+        const producto = carrito.find(prod => prod.id === productoId)
+        producto.cantidad = cantidad
+        actualizarCarrito(carrito)
     };
 
     const eliminarProductoDelCarritoContext = (id) => {
@@ -55,7 +50,6 @@ const CarritoProvider = ( { children } ) => {
     }
 
     const guardarCarritoContext = async (carrito) => {
-        // console.log(carrito)
         const carritoString = JSON.stringify(carrito)
         try{
             const options = {

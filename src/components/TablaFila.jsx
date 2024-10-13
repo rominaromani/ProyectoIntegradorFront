@@ -31,10 +31,10 @@ const TablaFila = ({ producto }) => {
       <td>
         <div className="acciones">
           <button onClick={() => handleEditar(producto)}>
-            <img src="/iconos/modificar.svg" alt="Editar" />
+            <img src="/iconos/modificar.svg" alt="Boton para editar" />
           </button>
           <button onClick={() => handleEliminar(producto)}>
-            <img src="/iconos/eliminar.svg" alt="Eliminar" />
+            <img src="/iconos/eliminar.svg" alt="Boton para eliminar" />
           </button>
         </div>
       </td>

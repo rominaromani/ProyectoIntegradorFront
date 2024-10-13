@@ -3,6 +3,7 @@ import './Footer.scss'
 
 const Footer = () => {
   return (
+    <div className="background"> 
     <footer className="footer">
       <div className="footer__logo-container">FashionFusion</div>
       <div className="footer__content">
@@ -17,10 +18,6 @@ const Footer = () => {
 
       <div className="footer__nav-container">
         <ul className="footer__nav-list">
-          {/* <NavLink to='/ayuda' className="footer__nav-link">Centro de ayuda</NavLink>
-          <NavLink to='/envios' className="footer__nav-link">Envíos/Devoluciones</NavLink>
-          <NavLink to='/politicas' className="footer__nav-link">Políticas de la tienda</NavLink>
-          <NavLink to='/pagos' className="footer__nav-link">Métodos de pago</NavLink> */}
           <NavLink to='#' className="footer__nav-link">Centro de ayuda</NavLink>
           <NavLink to='#' className="footer__nav-link">Envíos/Devoluciones</NavLink>
           <NavLink to='#' className="footer__nav-link">Políticas de la tienda</NavLink>
@@ -35,13 +32,13 @@ const Footer = () => {
       </div>
       <div className="footer__social-container">
         <NavLink to='#' className="footer__social-link">
-          <img src="/iconos/facebook.svg" alt="facebook"/>
+          <img src="/iconos/facebook.svg" alt="icono_facebook"/>
         </NavLink>
         <NavLink to='#' className="footer__social-link">
-          <img src="/iconos/instagram.svg" alt="instagram"/>
+          <img src="/iconos/instagram.svg" alt="icono_instagram"/>
         </NavLink>
         <NavLink to='#' className="footer__social-link">
-          <img src="/iconos/twitter.svg" alt="twitter"/>
+          <img src="/iconos/twitter.svg" alt="icono_twitter"/>
         </NavLink>
 
       </div>
@@ -54,6 +51,7 @@ const Footer = () => {
       </div>
     </div>
     </footer>
+    </div>
   )
 }
 

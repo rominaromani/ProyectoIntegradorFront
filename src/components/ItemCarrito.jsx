@@ -3,7 +3,7 @@ import { useContext, useState, useEffect } from 'react'
 // Props validation
 import PropTypes from 'prop-types'
 
-const ItemCarrito = ({ producto }) => {
+const ItemCarrito = ({ producto, calcularTotal }) => {
     const { eliminarProductoDelCarritoContext, ModificarCantidadDeProducto } = useContext(CarritoContext)
     const [cantidad, setCantidad] = useState(producto.cantidad)
 
@@ -13,12 +13,14 @@ const ItemCarrito = ({ producto }) => {
 
     const handleEliminar = (id) => {
         eliminarProductoDelCarritoContext(id)
+        calcularTotal()
     }
 
     const handleModificarCantidad = (id, nuevaCantidad) => {
         if (nuevaCantidad > 0) {
             ModificarCantidadDeProducto(id, nuevaCantidad)
             setCantidad(nuevaCantidad)
+            calcularTotal()
         }
     }
 
@@ -40,7 +42,7 @@ const ItemCarrito = ({ producto }) => {
                     </div>
 
                     <button className="btn-eliminar" onClick={() => handleEliminar(producto.id)}>
-                        <img src="/iconos/eliminar.svg" alt="Eliminar" />
+                        <img src="/iconos/eliminar.svg" alt="Boton_eliminar" />
                     </button>
                 </div>
             </td>
@@ -49,7 +51,8 @@ const ItemCarrito = ({ producto }) => {
 }
 
 ItemCarrito.propTypes = {
-    producto: PropTypes.object.isRequired
+    producto: PropTypes.object.isRequired,
+    calcularTotal: PropTypes.func.isRequired
 }
 
 export default ItemCarrito

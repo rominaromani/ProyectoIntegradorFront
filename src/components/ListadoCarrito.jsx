@@ -39,7 +39,8 @@ const ListadoCarrito = () => {
                 </tr>
             ) : (
                 carrito.map((producto, idx) => (
-                <ItemCarrito key={idx} producto={producto} />
+                <ItemCarrito key={idx} producto={producto} calcularTotal={calcularTotal}
+                />
                 ))
             )}
             </tbody>

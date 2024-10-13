@@ -43,12 +43,24 @@ export const useLocalStorage = ( clave, valorInicial = []) => {
         }
     }
 
+    const updateValor = (id, valor) => {
+        try {
+            const nuevoValorAlmacenado = [...valorAlmacenado]
+            const indice = nuevoValorAlmacenado.findIndex(item => item.id === id)
+            nuevoValorAlmacenado[indice] = valor
+            setValorAlmacenado(nuevoValorAlmacenado)
+            window.localStorage.setItem(clave, JSON.stringify(nuevoValorAlmacenado))
+        } catch (error) {
+            console.error(`Error al actualizar ${clave} del localstorage con ${id} del producto ${error}`)
+        }
+    }
+
     const limpiarValores = () => {
         window.localStorage.clear()
         window.localStorage.setItem(clave, JSON.stringify(valorInicial))
         setValorAlmacenado(valorInicial)
     }
-    return [ guardarValor, eliminarValor, limpiarValores, valorAlmacenado ]
+    return [ guardarValor, eliminarValor, limpiarValores, valorAlmacenado , updateValor]
 
 }
 

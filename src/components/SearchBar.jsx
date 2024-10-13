@@ -8,12 +8,12 @@ const SearchBar = () => {
             <label htmlFor="busqueda" className="search-bar__form-label">Buscar</label>
             <input type="search" className="search-bar__form-search" id="busqueda" placeholder="BUSCAR..."/>
             <button type="submit" className="search-bar__form-button">
-              <img src="/iconos/buscar.svg" alt=""/>
+              <img src="/iconos/buscar.svg" alt="icono_buscar"/>
             </button>
           </form>
           <div className="search-bar__carrito-container">
           <Link to="carrito">
-            <img src="/iconos/carrito.svg" alt="carrito"/>
+            <img src="/iconos/carrito.svg" alt="icono de carrito de compras"/>
           </Link>
           </div>
           <div className="menu-toogle">

@@ -1,14 +1,15 @@
 .footer {
-    background-color: #E7EEEA;
     display: flex;
     flex-direction: column;
     padding: 3rem;
     color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
 
     &__logo-container {
         padding-left: 3rem;
         padding-bottom: 1rem;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         &:after {
             content: "";
             display: inline-block;
@@ -67,7 +68,7 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        width: 15rem
+        width: 16.1rem;
     }
     
     &__subscription-input{
@@ -75,6 +76,7 @@
         border: 1px solid black;
         background-color: #E7EEEA;
         padding: 0.7rem;
+        width: 15.54rem;
 
         &::placeholder{
             color: #828080;
@@ -119,3 +121,6 @@
     }
 }
   
+.background{
+    background-color: #E7EEEA;
+}
